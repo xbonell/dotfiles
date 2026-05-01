@@ -9,6 +9,7 @@ This repo is meant to hold my common configuration files (shell, editor, git, to
 Current files include:
 
 - `.vimrc`
+- `.zshrc`
 
 ## Install / bootstrap
 
@@ -19,6 +20,7 @@ Example (safe, explicit):
 ```bash
 cd /path/to/dotfiles
 ln -sfn "$(pwd)/.vimrc" "$HOME/.vimrc"
+ln -sfn "$(pwd)/.zshrc" "$HOME/.zshrc"
 ```
 
 Notes:
