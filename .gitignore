@@ -1,0 +1,50 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# macOS volume metadata
+.Spotlight-V100
+.Trashes
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+\#*\#
+.vim/
+
+# Language/tooling caches
+.cache/
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.python-version
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local overrides / secrets (never commit)
+.env
+.env.*
+*.key
+*.pem
+*.p12
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.kubeconfig
+
+# Optional local dotfiles overrides
+.gitconfig.local
+.zshrc.local
+.bashrc.local
+.profile.local
