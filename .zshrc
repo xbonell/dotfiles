@@ -8,7 +8,7 @@ if [ -s "$ZSH/oh-my-zsh.sh" ]; then
 fi
 
 # starship (optional)
-if command -v starship >/dev/null 2>&1; then
+if [[ -o interactive ]] && command -v starship >/dev/null 2>&1 && [[ "${TERM:-}" != "dumb" ]]; then
   eval "$(starship init zsh)"
 fi
 
@@ -32,13 +32,13 @@ fi
 
 # fnm (optional)
 FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ] && command -v fnm >/dev/null 2>&1; then
+if [ -x "$FNM_PATH/fnm" ]; then
   export PATH="$FNM_PATH:$PATH"
-  eval "$(fnm env --shell zsh)"
+  eval "$("$FNM_PATH/fnm" env --shell zsh)"
 fi
 
 # fzf (optional)
-if command -v fzf >/dev/null 2>&1; then
+if [[ -o interactive ]] && command -v fzf >/dev/null 2>&1; then
   source <(fzf --zsh)
 fi
 
