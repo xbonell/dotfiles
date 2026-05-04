@@ -10,6 +10,7 @@ Current files include:
 
 - `.vimrc`
 - `.zshrc`
+- `.config/opencode/opencode.json` (OpenCode; symlink under `~/.config/opencode/`)
 
 ## Install / bootstrap
 
@@ -21,6 +22,8 @@ Example (safe, explicit):
 cd /path/to/dotfiles
 ln -sfn "$(pwd)/.vimrc" "$HOME/.vimrc"
 ln -sfn "$(pwd)/.zshrc" "$HOME/.zshrc"
+mkdir -p "$HOME/.config/opencode"
+ln -sfn "$(pwd)/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 ```
 
 Notes:

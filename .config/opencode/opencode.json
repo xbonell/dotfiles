@@ -1,0 +1,77 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai/gpt-5.4-mini",
+  "small_model": "openai/gpt-5.4-nano",
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "agent": {
+    "build": {
+      "description": "Default implementation work",
+      "model": "openai/gpt-5.4-mini"
+    },
+    "plan": {
+      "description": "Deep analysis before editing",
+      "model": "openai/gpt-5.4",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "patch": false,
+        "bash": false
+      }
+    },
+    "review": {
+      "description": "Serious review and bug hunting",
+      "model": "openai/gpt-5.4",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "patch": false,
+        "bash": false
+      }
+    },
+    "fast": {
+      "description": "Cheap utility transforms",
+      "model": "openai/gpt-5.4-nano"
+    }
+  },
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "variants": {
+            "fast": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "low"
+            },
+            "think": {
+              "reasoningEffort": "high",
+              "textVerbosity": "low"
+            }
+          }
+        },
+        "gpt-5.4-mini": {
+          "variants": {
+            "fast": {
+              "reasoningEffort": "low",
+              "textVerbosity": "low"
+            },
+            "think": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "low"
+            }
+          }
+        },
+        "gpt-5.4-nano": {
+          "variants": {
+            "fast": {
+              "reasoningEffort": "low",
+              "textVerbosity": "low"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
