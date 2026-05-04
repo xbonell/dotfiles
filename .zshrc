@@ -37,6 +37,12 @@ if [ -x "$FNM_PATH/fnm" ]; then
   eval "$("$FNM_PATH/fnm" env --shell zsh)"
 fi
 
+# Opencode CLI (optional)
+OPENCODE_BIN="$HOME/.opencode/bin"
+if [ -d "$OPENCODE_BIN" ]; then
+  export PATH="$OPENCODE_BIN:$PATH"
+fi
+
 # fzf (optional)
 if [[ -o interactive ]] && command -v fzf >/dev/null 2>&1; then
   source <(fzf --zsh)
@@ -47,10 +53,10 @@ if command -v lsd >/dev/null 2>&1; then
   alias ls='lsd'
 fi
 
+# Aliases
 alias fastfetch="fastfetch --config paleofetch --key-type icon --separator '  '"
 
 # Local overrides (untracked)
 if [ -s "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
-
