@@ -54,6 +54,7 @@ if command -v lsd >/dev/null 2>&1; then
 fi
 
 # Fastfetch (optional)
+unalias fastfetch >/dev/null 2>&1 || true
 fastfetch() {
   local config="$HOME/.config/fastfetch/config.jsonc"
 
