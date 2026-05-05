@@ -10,25 +10,23 @@ Current files include:
 
 - `.vimrc`
 - `.zshrc`
+- `.config/fastfetch/config.jsonc` (Fastfetch; symlink under `~/.config/fastfetch/`)
 - `.config/opencode/opencode.json` (OpenCode; symlink under `~/.config/opencode/`)
 
 ## Install / bootstrap
 
 The intended workflow is to **symlink** files from this repo into `$HOME` (or the appropriate config location).
 
-Example (safe, explicit):
+Recommended:
 
 ```bash
 cd /path/to/dotfiles
-ln -sfn "$(pwd)/.vimrc" "$HOME/.vimrc"
-ln -sfn "$(pwd)/.zshrc" "$HOME/.zshrc"
-mkdir -p "$HOME/.config/opencode"
-ln -sfn "$(pwd)/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
+./install.sh
 ```
 
 Notes:
 
-- `-s` symlink, `-f` replace existing destination, `-n` treat destination as a normal file if it’s a symlink.
+- `install.sh` is safe to re-run: it relinks existing symlinks and skips real files/directories.
 - For apps that prefer XDG paths (e.g. `~/.config/...`), place files accordingly and symlink those directories/files.
 
 ## Machine-specific / secrets

@@ -53,8 +53,16 @@ if command -v lsd >/dev/null 2>&1; then
   alias ls='lsd'
 fi
 
-# Aliases
-alias fastfetch="fastfetch --config paleofetch --key-type icon --separator '  '"
+# Fastfetch (optional)
+fastfetch() {
+  local config="$HOME/.config/fastfetch/config.jsonc"
+
+  if [ -f "$config" ]; then
+    command fastfetch --config "$config" "$@"
+  else
+    command fastfetch "$@"
+  fi
+}
 
 # Local overrides (untracked)
 if [ -s "$HOME/.zshrc.local" ]; then
