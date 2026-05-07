@@ -32,9 +32,11 @@ fi
 
 # fnm (optional)
 FNM_PATH="$HOME/.local/share/fnm"
-if [ -x "$FNM_PATH/fnm" ]; then
+if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
-  eval "$("$FNM_PATH/fnm" env --shell zsh)"
+fi
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
 # Opencode CLI (optional)
