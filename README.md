@@ -12,6 +12,7 @@ Current files include:
 - `.zshrc`
 - `.config/fastfetch/config.jsonc` (Fastfetch; symlink under `~/.config/fastfetch/`)
 - `.config/opencode/opencode.json` (OpenCode; symlink under `~/.config/opencode/`)
+- `.config/starship.toml` (Starship prompt; symlink at `~/.config/starship.toml`)
 
 ## Install / bootstrap
 
@@ -22,6 +23,12 @@ Recommended:
 ```bash
 cd /path/to/dotfiles
 ./install.sh
+```
+
+To link everything without the interactive selector:
+
+```bash
+./install.sh --all
 ```
 
 Notes:
