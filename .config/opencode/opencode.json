@@ -8,11 +8,13 @@
   "agent": {
     "build": {
       "description": "Default implementation work",
-      "model": "openai/gpt-5.4-mini"
+      "model": "openai/gpt-5.4-mini",
+      "variant": "fast"
     },
     "plan": {
       "description": "Deep analysis before editing",
-      "model": "openai/gpt-5.4",
+      "model": "openai/gpt-5.6-terra",
+      "variant": "think",
       "tools": {
         "write": false,
         "edit": false,
@@ -22,7 +24,8 @@
     },
     "review": {
       "description": "Serious review and bug hunting",
-      "model": "openai/gpt-5.4",
+      "model": "openai/gpt-5.6-terra",
+      "variant": "think",
       "tools": {
         "write": false,
         "edit": false,
@@ -37,8 +40,11 @@
   },
   "provider": {
     "openai": {
+      "options": {
+        "setCacheKey": true
+      },
       "models": {
-        "gpt-5.4": {
+        "gpt-5.6-terra": {
           "variants": {
             "fast": {
               "reasoningEffort": "medium",
@@ -74,4 +80,3 @@
     }
   }
 }
-
